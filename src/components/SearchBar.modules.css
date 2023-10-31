@@ -1,0 +1,21 @@
+/* .inputField {
+  display: flex;
+  width: 100%;
+  cursor: pointer;
+} */
+
+.inputField {
+  cursor: pointer;
+  margin-left: 40px;
+}
+
+.form {
+  margin-left: 30px;
+}
+
+input {
+  width: 90%;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  margin: 8px 20px;
+}

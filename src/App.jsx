@@ -33,12 +33,12 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className={styles.container}>
       <h1>Rick & Morty</h1>
       <SearchBar />
       <h2 className={styles.listTitle}>Llista de personatges</h2>
 
-      <ul className={styles.container}>
+      <ul>
         {data &&
           data.map((characterData) => (
             <CharacterCard

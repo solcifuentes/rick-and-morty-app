@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
-
 import styles from "./CharacterCard.module.css";
 
 export default function CharacterCard(props) {

@@ -2,10 +2,15 @@
   background-color: #0f7c85;
   border-radius: 10px 10px 10px 10px;
   padding: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  margin-left: 15;
+  margin-right: 15px;
   color: white;
   border: 3px solid #7b9948;
   text-align: center;
+  width: 250px;
+  height: 300px;
 }
 
 .card .card:hover {
@@ -15,6 +20,10 @@
 .cardContainer {
   padding: 2px 16px;
   line-height: 0.5;
+}
+
+.cardContainer h3 {
+  line-height: 1.2;
 }
 
 .characterImg {
@@ -64,4 +73,8 @@
   line-height: 0.5;
   margin-block-start: 0;
   margin-block-end: 0;
+}
+
+.characterOrigin {
+  line-height: 1.1;
 }

@@ -1,14 +1,11 @@
-ul {
-  list-style-type: none;
-}
 .card {
   background-color: #0f7c85;
   border-radius: 10px 10px 10px 10px;
   padding: 10px;
   margin-bottom: 10px;
-  text-align: center;
   color: white;
   border: 3px solid #7b9948;
+  text-align: center;
 }
 
 .card .card:hover {
@@ -17,6 +14,7 @@ ul {
 
 .cardContainer {
   padding: 2px 16px;
+  line-height: 0.5;
 }
 
 .characterImg {
@@ -26,4 +24,29 @@ ul {
   height: 200px;
   max-width: 100%;
   height: auto;
+}
+
+.characterSpecies {
+  font-weight: 100;
+  margin-left: 8px;
+}
+.circle {
+  background: greenyellow;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+}
+
+.speciesContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.speciesContainer p {
+  line-height: 0.5;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }

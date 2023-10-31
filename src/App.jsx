@@ -33,10 +33,12 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div>
       <h1>Rick & Morty</h1>
       <SearchBar />
-      <ul className={styles.grid}>
+      <h2 className={styles.listTitle}>List of characters</h2>
+
+      <ul className={styles.container}>
         {data &&
           data.map((characterData) => (
             <CharacterCard
@@ -45,7 +47,7 @@ function App() {
             />
           ))}
       </ul>
-    </>
+    </div>
   );
 }
 

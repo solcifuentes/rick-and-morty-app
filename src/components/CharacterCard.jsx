@@ -1,7 +1,6 @@
 import React from "react";
-import "./CharacterCard.css";
 
-// import styles from "./CharacterCard.module.css";
+import styles from "./CharacterCard.module.css";
 
 export default function CharacterCard(props) {
   const character = props.characterData;
@@ -9,16 +8,16 @@ export default function CharacterCard(props) {
     <div>
       <ul>
         {character && (
-          <li className="card">
+          <li className={styles.card}>
             <img
-              className="characterImg"
+              className={styles.characterImg}
               src={character.image}
               alt={character.name}
             />
-            <div className="cardContainer">
-              <h3 className="characterName">{character.name}</h3>
-              <p className="characterSpecies">{character.species}</p>
-              <p className="characterOrigin">{character.origin.name}</p>
+            <div className={styles.cardContainer}>
+              <h3 className={styles.characterName}>{character.name}</h3>
+              <p className={styles.characterSpecies}>{character.species}</p>
+              <p className={styles.characterOrigin}>{character.origin.name}</p>
             </div>
           </li>
         )}

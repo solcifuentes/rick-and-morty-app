@@ -4,14 +4,16 @@ h1 {
 
 .container {
   /* width: 90%; */
-  display: grid;
+  /* display: grid; */
 }
 
 ul {
   list-style-type: none;
+  /* display: inline-block; */
 }
 
 .listTitle {
   color: white;
   margin-bottom: 80px;
+  font-weight: 700;
 }

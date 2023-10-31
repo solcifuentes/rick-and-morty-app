@@ -36,7 +36,7 @@ function App() {
     <div>
       <h1>Rick & Morty</h1>
       <SearchBar />
-      <h2 className={styles.listTitle}>List of characters</h2>
+      <h2 className={styles.listTitle}>Llista de personatges</h2>
 
       <ul className={styles.container}>
         {data &&

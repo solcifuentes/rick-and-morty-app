@@ -30,14 +30,29 @@
   font-weight: 100;
   margin-left: 8px;
 }
-.circle {
-  background: greenyellow;
+.circleAlive {
   border-radius: 50%;
   width: 10px;
   height: 10px;
   display: inline-block;
+  background: greenyellow;
 }
 
+.circleDead {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background: red;
+}
+
+.circleUnknown {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background: rgb(99, 190, 223);
+}
 .speciesContainer {
   display: flex;
   flex-direction: row;

@@ -18,4 +18,5 @@ input {
   box-sizing: border-box;
   padding: 12px 20px;
   margin: 8px 20px;
+  border-radius: 10px 10px 10px 10px;
 }

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import SearchBar from "./components/SearchBar";
 import CharacterCard from "./components/CharacterCard";
 import styles from "./App.module.css";
+import logo from "./assets/logo.png";
 
 const ENDPOINT = "https://rickandmortyapi.com/api/character/";
 
@@ -34,8 +35,8 @@ function App() {
 
   return (
     <div className={styles.container}>
-      <h1>Rick & Morty</h1>
-      <SearchBar />
+      <Logo />
+      <SearchBar characterData={data} />
       <h2 className={styles.listTitle}>Llista de personatges</h2>
 
       <ul>
@@ -52,3 +53,7 @@ function App() {
 }
 
 export default App;
+
+function Logo() {
+  return <img className={styles.logo} src={logo} alt="Rick & Morty" />;
+}

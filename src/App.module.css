@@ -1,10 +1,8 @@
-h1 {
-  color: #149eb4;
-}
-
 .container {
-  /* display: grid; */
   max-width: 1300px;
+
+  display: flex;
+  flex-direction: column;
 }
 
 ul {
@@ -18,4 +16,10 @@ ul {
   margin-bottom: 60px;
   margin-left: 35px;
   font-weight: 700;
+}
+
+.logo {
+  width: 400px;
+  height: 150px;
+  margin: 20px auto;
 }

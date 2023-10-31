@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import "./App.css";
+// import "./App.css";
 import SearchBar from "./components/SearchBar";
 import CharacterCard from "./components/CharacterCard";
+import styles from "./App.module.css";
 
 const ENDPOINT = "https://rickandmortyapi.com/api/character/";
 
@@ -35,7 +36,7 @@ function App() {
     <>
       <h1>Rick & Morty</h1>
       <SearchBar />
-      <ul>
+      <ul className={styles.grid}>
         {data &&
           data.map((characterData) => (
             <CharacterCard

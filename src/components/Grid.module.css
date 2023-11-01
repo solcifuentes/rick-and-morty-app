@@ -1,0 +1,35 @@
+.listTitle {
+  color: white;
+  margin-bottom: 60px;
+  margin-left: 35px;
+  font-weight: 700;
+}
+
+h2 {
+  color: white;
+  margin-bottom: 60px;
+  margin-left: 35px;
+  font-weight: 700;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.container {
+  max-width: 1300px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* .seeMoreButton {
+  border: red;
+  cursor: pointer;
+} */
+
+/* button {
+  border: 3px white;
+  cursor: pointer;
+  width: 90%;
+} */

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { useState } from "react";
-import styles from "./SearchBar.modules.css";
+import styles from "./SearchBar.module.css";
 import { FaSearch } from "react-icons/fa";
 
 export default function SearchBar(props) {

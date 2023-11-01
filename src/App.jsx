@@ -38,7 +38,6 @@ function App() {
     <div className={styles.container}>
       <Logo />
       <SearchBar data={data} />
-      <h2 className={styles.listTitle}>Llista de personatges</h2>
       <Grid data={data} />
       {/* <ul>
         {data &&
@@ -49,7 +48,6 @@ function App() {
             />
           ))}
       </ul> */}
-      <button className={styles.SeeMoreButton}>Mostrar més</button>
     </div>
   );
 }

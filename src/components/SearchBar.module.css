@@ -19,17 +19,17 @@
   border: none;
 }
 
-input {
+/* input {
   width: 90%;
   box-sizing: border-box;
   padding: 12px 20px;
   margin: 8px 20px;
   border-radius: 10px;
-}
-
-/* input:focus {
-  outline: none;
 } */
+
+input:focus {
+  outline: none;
+}
 
 /* .form {
   background-color: white;

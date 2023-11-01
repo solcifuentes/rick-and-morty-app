@@ -1,20 +1,37 @@
 /* eslint-disable react/prop-types */
-import React from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./SearchBar.module.css";
 import { FaSearch } from "react-icons/fa";
 
+const ENDPOINT = "https://rickandmortyapi.com/api/character/";
 export default function SearchBar(props) {
   const [inputValue, setInputValue] = useState("");
+  const [error, setError] = useState("");
+  const [foundChar, setFoundChar] = useState([]);
 
+  const searchCharacter = async () => {
+    try {
+      const response = await fetch(`${ENDPOINT}?name=${inputValue}`);
+      if (response.ok) {
+        const json = await response.json();
+        return json;
+      } else {
+        setError(`Server error: ${response.status} ${response.statusText}`);
+      }
+    } catch (err) {
+      setError("Network error: ", err.message);
+    }
+  };
+
+  async function fetchChar() {
+    const foundChar = await searchCharacter();
+    console.log({ foundChar });
+    setFoundChar(foundChar.results);
+  }
   const handleSearch = () => {
     event.preventDefault();
     console.log("submitted");
-    // const characterNames = props.data.map((character) => {
-    //   return character.name.toLowerCase();
-    // });
-    // const searchTerm = inputValue.toLowerCase();
-    // characterNames.startsWith(searchTerm);
+    fetchChar();
   };
 
   return (
@@ -27,7 +44,8 @@ export default function SearchBar(props) {
           value={inputValue}
           placeholder="Search a Rick and Morty's character"
           onChange={(event) => {
-            setInputValue(event.target.value);
+            const inputToLowCase = event.target.value;
+            setInputValue(inputToLowCase);
           }}
         />
         <label htmlFor="character-field"></label>

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 // import "./App.css";
 import SearchBar from "./components/SearchBar";
 import Grid from "./components/Grid";
-import CharacterCard from "./components/CharacterCard";
+import ScrollToTop from "./components/ScrollToTop";
 import styles from "./App.module.css";
 import logo from "./assets/logo.png";
 
@@ -51,10 +51,6 @@ function App() {
     loadMoreChar();
   };
 
-  const scrollToTop = () => {
-    window.scrollTo(0, 0);
-  };
-
   return (
     <div className={styles.container}>
       <Logo />
@@ -63,7 +59,7 @@ function App() {
       <button className={styles.btn} onClick={() => handleClick()}>
         Load more
       </button>
-      <button onClick={scrollToTop}>Scroll to top</button>
+      <ScrollToTop />
     </div>
   );
 }

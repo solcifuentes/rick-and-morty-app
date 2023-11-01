@@ -36,7 +36,7 @@ export default function Grid({ data }) {
             />
           ))}
       </ul>
-      <button className={styles.seeMoreButton} onClick={() => handleClick()}>
+      <button className={styles.btn} onClick={() => handleClick()}>
         {data.length !== slice.length ? "Load more" : "Show less"}
       </button>
     </div>

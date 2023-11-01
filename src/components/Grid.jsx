@@ -26,7 +26,7 @@ export default function Grid({ data }) {
   };
   return (
     <div className={styles.container}>
-      <h2 className={styles.listTitle}>Llista de personatges</h2>
+      <h2 className={styles.listTitle}>List of characters</h2>
       <ul>
         {data &&
           slice.map((characterData) => (

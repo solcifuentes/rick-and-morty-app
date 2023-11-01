@@ -26,7 +26,7 @@ export default function SearchBar(props) {
             type="text"
             className={styles.character}
             value={inputValue}
-            placeholder="Troba un personatge"
+            placeholder="Search a Rick and Morty's character"
             onChange={(event) => {
               setInputValue(event.target.value);
             }}

@@ -9,6 +9,7 @@ export default function SearchBar(props) {
   const [error, setError] = useState("");
   const [foundChar, setFoundChar] = useState([]);
 
+  console.log({ foundChar });
   const searchCharacter = async () => {
     try {
       const response = await fetch(`${ENDPOINT}?name=${inputValue}`);
@@ -24,9 +25,9 @@ export default function SearchBar(props) {
   };
 
   async function fetchChar() {
-    const foundChar = await searchCharacter();
-    console.log({ foundChar });
-    setFoundChar(foundChar.results);
+    const found = await searchCharacter();
+    console.log({ found });
+    setFoundChar(found.results);
   }
   const handleSearch = () => {
     event.preventDefault();
@@ -51,7 +52,6 @@ export default function SearchBar(props) {
         <label htmlFor="character-field"></label>
         <FaSearch />
       </form>
-      <p>{inputValue}</p>
     </div>
   );
 }

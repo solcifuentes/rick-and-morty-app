@@ -11,13 +11,14 @@ const ENDPOINT = "https://rickandmortyapi.com/api/character/";
 function App() {
   const [data, setData] = useState([]);
   const [error, setError] = useState("");
-  const [page, setPage] = useState(1);
+  const [nextpage, setNextPage] = useState(1);
 
   const getData = async () => {
     try {
-      const response = await fetch(`${ENDPOINT}/?page=${page}`);
+      const response = await fetch(`${ENDPOINT}/?page=${nextpage}`);
       if (response.ok) {
         const json = await response.json();
+        setNextPage(nextpage + 1);
         return json;
       } else {
         setError(`Server error: ${response.status} ${response.statusText}`);
@@ -38,10 +39,11 @@ function App() {
   }, []);
 
   const loadMoreChar = () => {
-    setPage(page + 1);
     async function fetchMoreData() {
-      const charactersData = await getData();
-      setData(charactersData.results);
+      const charactersNewData = await getData();
+      const newCharArray = charactersNewData.results;
+      let nextCharacters = [...data, ...newCharArray];
+      setData(nextCharacters);
     }
     fetchMoreData();
   };
@@ -49,6 +51,7 @@ function App() {
     loadMoreChar();
   };
 
+  console.log({ data });
   return (
     <div className={styles.container}>
       <Logo />

@@ -78,6 +78,13 @@ li:hover {
   align-items: center;
   justify-content: center;
 }
+.hide {
+  display: none;
+}
+.speciesContainer:hover + .hide {
+  display: block;
+  color: red;
+}
 
 .speciesContainer p {
   line-height: 0.5;

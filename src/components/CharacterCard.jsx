@@ -14,6 +14,7 @@ export default function CharacterCard(props) {
       <div className={styles.cardContainer}>
         <h3 className={styles.characterName}>{character.name}</h3>
         <div className={styles.speciesContainer}>
+          <span className={styles.hide}>{character.status}</span>
           <CharacterStatus status={character.status} />
           <p className={styles.characterSpecies}>{character.species}</p>
         </div>

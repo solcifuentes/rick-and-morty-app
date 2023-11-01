@@ -12,6 +12,8 @@ function App() {
   const [data, setData] = useState([]);
   const [error, setError] = useState("");
   const [nextpage, setNextPage] = useState(1);
+  const [foundChar, setFoundChar] = useState([]);
+  const [inputValue, setInputValue] = useState("");
 
   const getData = async () => {
     try {
@@ -38,6 +40,31 @@ function App() {
     fetchData();
   }, []);
 
+  const getCharacter = async () => {
+    try {
+      const response = await fetch(`${ENDPOINT}?name=${inputValue}`);
+      if (response.ok) {
+        const json = await response.json();
+        return json;
+      } else {
+        console.log(response);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  async function fetchChar() {
+    const found = await getCharacter();
+    console.log({ found });
+    setFoundChar(found.results);
+  }
+
+  const handleSearch = () => {
+    event.preventDefault();
+    fetchChar();
+  };
+
   const loadMoreChar = () => {
     async function fetchMoreData() {
       const charactersNewData = await getData();
@@ -54,8 +81,12 @@ function App() {
   return (
     <div className={styles.container}>
       <Logo />
-      <SearchBar data={data} />
-      <Grid data={data} />
+      <SearchBar
+        handleSearch={handleSearch}
+        setInputValue={setInputValue}
+        inputValue={inputValue}
+      />
+      <Grid data={data} foundChar={foundChar} inputValue={inputValue} />
       <button className={styles.btn} onClick={() => handleClick()}>
         Load more
       </button>

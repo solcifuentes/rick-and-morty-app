@@ -23,7 +23,7 @@ ul {
   flex-direction: column;
 }
 
-.btn {
+/* .btn {
   background-color: #85a54e;
   border-radius: 6px;
   box-shadow: hsla(0, 0%, 20%, 0.2);
@@ -40,7 +40,7 @@ ul {
   flex-direction: column;
   align-items: center;
   text-align: center;
-}
+} */
 
 /* button {
   border: 3px white;

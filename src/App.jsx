@@ -9,20 +9,23 @@ import logo from "./assets/logo.png";
 const ENDPOINT = "https://rickandmortyapi.com/api/character/";
 
 function App() {
-  const [data, setData] = useState("");
+  const [data, setData] = useState([]);
   const [error, setError] = useState("");
+  const [page, setPage] = useState(1);
 
   const getData = async () => {
     try {
-      const response = await fetch(ENDPOINT);
+      const response = await fetch(`${ENDPOINT}/?page=${page}`);
       if (response.ok) {
         const json = await response.json();
         return json;
       } else {
         setError(`Server error: ${response.status} ${response.statusText}`);
+        console.log(error);
       }
     } catch (err) {
       setError("Network error: ", err.message);
+      console.log(error);
     }
   };
 
@@ -34,20 +37,26 @@ function App() {
     fetchData();
   }, []);
 
+  const loadMoreChar = () => {
+    setPage(page + 1);
+    async function fetchMoreData() {
+      const charactersData = await getData();
+      setData(charactersData.results);
+    }
+    fetchMoreData();
+  };
+  const handleClick = () => {
+    loadMoreChar();
+  };
+
   return (
     <div className={styles.container}>
       <Logo />
       <SearchBar data={data} />
       <Grid data={data} />
-      {/* <ul>
-        {data &&
-          data.map((characterData) => (
-            <CharacterCard
-              key={characterData.id}
-              characterData={characterData}
-            />
-          ))}
-      </ul> */}
+      <button className={styles.btn} onClick={() => handleClick()}>
+        Load more
+      </button>
     </div>
   );
 }

@@ -10,3 +10,22 @@
   height: 150px;
   margin: 20px auto;
 }
+
+.btn {
+  background-color: #85a54e;
+  border-radius: 6px;
+  box-shadow: hsla(0, 0%, 20%, 0.2);
+  color: rgb(239, 243, 237);
+  border: none;
+  font-weight: 500;
+  font-size: 18px;
+  padding-top: 11px;
+  margin: 0px auto 25px;
+
+  line-height: 20.27px;
+  height: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}

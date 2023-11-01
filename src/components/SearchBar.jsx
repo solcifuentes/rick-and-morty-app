@@ -6,19 +6,20 @@ import { FaSearch } from "react-icons/fa";
 
 export default function SearchBar(props) {
   const [inputValue, setInputValue] = useState("");
-  // const characterNames = props.data.map((character) => {
-  //   return character.name.toLowerCase();
-  // });
 
-  const handleSearch = (inputValue) => {
+  const handleSearch = () => {
     event.preventDefault();
-    const searchTerm = inputValue.toLowerCase();
-    characterNames.startsWith(searchTerm);
+    console.log("submitted");
+    // const characterNames = props.data.map((character) => {
+    //   return character.name.toLowerCase();
+    // });
+    // const searchTerm = inputValue.toLowerCase();
+    // characterNames.startsWith(searchTerm);
   };
 
   return (
     <div className={styles.inputWrapper}>
-      <form className={styles.form} onSubmit={() => handleSearch(inputValue)}>
+      <form className={styles.form} onSubmit={() => handleSearch()}>
         <input
           id="character-field"
           type="text"
@@ -32,7 +33,7 @@ export default function SearchBar(props) {
         <label htmlFor="character-field"></label>
         <FaSearch />
       </form>
-      {/* <p>{inputValue}</p> */}
+      <p>{inputValue}</p>
     </div>
   );
 }

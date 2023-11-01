@@ -39,8 +39,8 @@ function App() {
       <Logo />
       <SearchBar data={data} />
       <h2 className={styles.listTitle}>Llista de personatges</h2>
-      <Grid />
-      <ul>
+      <Grid data={data} />
+      {/* <ul>
         {data &&
           data.map((characterData) => (
             <CharacterCard
@@ -48,7 +48,7 @@ function App() {
               characterData={characterData}
             />
           ))}
-      </ul>
+      </ul> */}
       <button className={styles.SeeMoreButton}>Mostrar més</button>
     </div>
   );

@@ -4,7 +4,6 @@ import styles from "./CharacterCard.module.css";
 
 export default function CharacterCard(props) {
   const character = props.characterData;
-  console.log(character);
   return (
     <li className={styles.card}>
       <img

@@ -6,9 +6,9 @@ import { FaSearch } from "react-icons/fa";
 
 export default function SearchBar(props) {
   const [inputValue, setInputValue] = useState("");
-  const characterNames = props.data.map((character) => {
-    return character.name.toLowerCase();
-  });
+  // const characterNames = props.data.map((character) => {
+  //   return character.name.toLowerCase();
+  // });
 
   const handleSearch = (inputValue) => {
     event.preventDefault();

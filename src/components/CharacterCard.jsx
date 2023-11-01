@@ -6,7 +6,7 @@ export default function CharacterCard(props) {
   const character = props.characterData;
   const foundChar = props.foundChar;
 
-  if (foundChar.length === 0) {
+  if (!foundChar) {
     return (
       <li className={styles.card}>
         <img
@@ -32,24 +32,24 @@ export default function CharacterCard(props) {
       <li className={styles.card}>
         <img
           className={styles.characterImg}
-          src={character.image}
-          alt={character.name}
+          src={foundChar.image}
+          alt={foundChar.name}
         />
         <div className={styles.cardContainer}>
-          <h3 className={styles.characterName}>{character.name}</h3>
+          <h3 className={styles.characterName}>{foundChar.name}</h3>
           <div className={styles.speciesContainer}>
-            <span className={styles.hide}>{character.status}</span>
-            <CharacterStatus status={character.status} />
-            <p className={styles.characterSpecies}>{character.species}</p>
+            <span className={styles.hide}>{foundChar.status}</span>
+            <CharacterStatus status={foundChar.status} />
+            <p className={styles.characterSpecies}>{foundChar.species}</p>
           </div>
-          <p className={styles.characterOrigin}>{character.origin.name}</p>
+          <p className={styles.characterOrigin}>{foundChar.origin.name}</p>
         </div>
       </li>
     );
   }
   return (
     <div>
-      <p>We couldn't find that character. Check if it's well written.</p>
+      <p>We could not find that character. Check if it is well written.</p>
     </div>
   );
 }

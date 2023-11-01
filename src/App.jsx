@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 // import "./App.css";
 import SearchBar from "./components/SearchBar";
+import Grid from "./components/Grid";
 import CharacterCard from "./components/CharacterCard";
 import styles from "./App.module.css";
 import logo from "./assets/logo.png";
@@ -38,7 +39,7 @@ function App() {
       <Logo />
       <SearchBar data={data} />
       <h2 className={styles.listTitle}>Llista de personatges</h2>
-
+      <Grid />
       <ul>
         {data &&
           data.map((characterData) => (
@@ -48,6 +49,7 @@ function App() {
             />
           ))}
       </ul>
+      <button className={styles.SeeMoreButton}>Mostrar més</button>
     </div>
   );
 }

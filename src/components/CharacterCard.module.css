@@ -7,15 +7,23 @@
   margin-left: 15;
   margin-right: 15px;
   color: white;
-  border: 3px solid #7b9948;
+  border: 3px solid #85a54e;
   text-align: center;
   width: 250px;
   height: 300px;
   /* cursor: pointer; */
 }
 
-.card .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+li:hover {
+  border: 3px solid #abf033;
+}
+
+/* .card img:hover {
+  border: 3px solid #abf033;
+} */
+
+.card img {
+  border: 3px solid #85a54e;
 }
 
 .cardContainer {
@@ -40,6 +48,7 @@
   font-weight: 100;
   margin-left: 8px;
 }
+
 .circleAlive {
   border-radius: 50%;
   width: 10px;

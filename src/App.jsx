@@ -36,7 +36,7 @@ function App() {
   return (
     <div className={styles.container}>
       <Logo />
-      <SearchBar characterData={data} />
+      <SearchBar data={data} />
       <h2 className={styles.listTitle}>Llista de personatges</h2>
 
       <ul>

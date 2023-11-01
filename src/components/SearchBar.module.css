@@ -57,3 +57,18 @@ input:focus {
   text-align: justify;
   caret-color: auto;
 }
+
+.inputField::after {
+  content: "A";
+  position: absolute;
+  left: 0;
+  top: 24px;
+  min-width: 200px;
+  border: 1px #aaaaaa solid;
+  border-radius: 10px;
+  background-color: #ffffcc;
+  padding: 12px;
+  color: #000000;
+  font-size: 14px;
+  z-index: 1;
+}

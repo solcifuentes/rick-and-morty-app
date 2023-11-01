@@ -29,6 +29,7 @@ export default function SearchBar(props) {
             setInputValue(event.target.value);
           }}
         />
+        <label htmlFor="character-field"></label>
         <FaSearch />
       </form>
       {/* <p>{inputValue}</p> */}

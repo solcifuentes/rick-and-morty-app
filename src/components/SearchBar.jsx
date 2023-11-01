@@ -19,20 +19,17 @@ export default function SearchBar(props) {
   return (
     <div className={styles.inputWrapper}>
       <form className={styles.form} onSubmit={() => handleSearch(inputValue)}>
-        <label htmlFor="character-field">
-          {" "}
-          <input
-            id="character-field"
-            type="text"
-            className={styles.character}
-            value={inputValue}
-            placeholder="Search a Rick and Morty's character"
-            onChange={(event) => {
-              setInputValue(event.target.value);
-            }}
-          />
-          <FaSearch />
-        </label>
+        <input
+          id="character-field"
+          type="text"
+          className={styles.inputField}
+          value={inputValue}
+          placeholder="Search a Rick and Morty's character"
+          onChange={(event) => {
+            setInputValue(event.target.value);
+          }}
+        />
+        <FaSearch />
       </form>
       {/* <p>{inputValue}</p> */}
     </div>

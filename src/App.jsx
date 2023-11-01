@@ -51,7 +51,10 @@ function App() {
     loadMoreChar();
   };
 
-  console.log({ data });
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className={styles.container}>
       <Logo />
@@ -60,6 +63,7 @@ function App() {
       <button className={styles.btn} onClick={() => handleClick()}>
         Load more
       </button>
+      <button onClick={scrollToTop}>Scroll to top</button>
     </div>
   );
 }

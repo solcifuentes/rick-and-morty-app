@@ -65,7 +65,7 @@ Follow these few instructions to get the app working:
 
 ## Demo
 
-https://sol-rick-and-morty.netlify.app/
+[Rick-and-Morty-demo-url]
 
 <!-- CONTACT -->
 
@@ -79,3 +79,4 @@ https://www.linkedin.com/in/sol-cifuentes/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
 [API-url]: https://rickandmortyapi.com/
+[Rick-and-Morty-demo-url]: https://sol-rick-and-morty.netlify.app/

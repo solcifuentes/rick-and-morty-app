@@ -35,6 +35,12 @@ Featuring a responsive and user-friendly UI, the app allows users to:
 - Search for a character by name in real-time.
 - Request a subsequent page of results.
 
+<!-- DEMO -->
+
+## Demo
+
+[Rick-and-Morty-demo-url]
+
 ## Built with
 
 - [![React][React.js]][React-url]
@@ -60,12 +66,6 @@ Follow these few instructions to get the app working:
    ```js
     npm run dev
    ```
-
-<!-- DEMO -->
-
-## Demo
-
-[Rick-and-Morty-demo-url]
 
 <!-- CONTACT -->
 

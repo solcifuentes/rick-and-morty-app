@@ -4,7 +4,6 @@ import styles from "./Grid.module.css";
 import CharacterCard from "./CharacterCard";
 
 export default function Grid({ data }) {
-  console.log({ data });
   if (data.length > 0) {
     return (
       <div className={styles.container}>

@@ -1,12 +1,9 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
+import React from "react";
 import styles from "./CharacterCard.module.css";
 
-export default function CharacterCard(props) {
-  const character = props.characterData;
-  const foundChar = props.foundChar;
-
-  if (!foundChar) {
+export default function CharacterCard({ character }) {
+  if (character) {
     return (
       <li className={styles.card}>
         <img
@@ -26,32 +23,6 @@ export default function CharacterCard(props) {
       </li>
     );
   }
-
-  if (foundChar.length !== 0) {
-    return (
-      <li className={styles.card}>
-        <img
-          className={styles.characterImg}
-          src={foundChar.image}
-          alt={foundChar.name}
-        />
-        <div className={styles.cardContainer}>
-          <h3 className={styles.characterName}>{foundChar.name}</h3>
-          <div className={styles.speciesContainer}>
-            <span className={styles.hide}>{foundChar.status}</span>
-            <CharacterStatus status={foundChar.status} />
-            <p className={styles.characterSpecies}>{foundChar.species}</p>
-          </div>
-          <p className={styles.characterOrigin}>{foundChar.origin.name}</p>
-        </div>
-      </li>
-    );
-  }
-  return (
-    <div>
-      <p>We could not find that character. Check if it is well written.</p>
-    </div>
-  );
 }
 
 function CharacterStatus({ status }) {

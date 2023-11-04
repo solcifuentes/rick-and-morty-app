@@ -12,8 +12,9 @@ function App() {
   const [data, setData] = useState([]);
   const [error, setError] = useState("");
   const [nextpage, setNextPage] = useState(1);
-  const [foundChar, setFoundChar] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
   const [inputValue, setInputValue] = useState("");
+  const [noCharResults, setNoCharResults] = useState(false);
 
   const getData = async () => {
     try {
@@ -45,9 +46,10 @@ function App() {
       const response = await fetch(`${ENDPOINT}?name=${inputValue}`);
       if (response.ok) {
         const json = await response.json();
+        setNoCharResults(false);
         return json;
       } else {
-        console.log(response);
+        console.log(`Server error: ${response.status} ${response.statusText}`);
       }
     } catch (err) {
       console.log(err);
@@ -56,8 +58,13 @@ function App() {
 
   async function fetchChar() {
     const found = await getCharacter();
-    console.log({ found });
-    setFoundChar(found.results);
+    if (!found) {
+      console.log("no encontrado");
+      setNoCharResults(true);
+    } else {
+      console.log({ found });
+      setSearchResults(found.results);
+    }
   }
 
   const handleSearch = () => {
@@ -86,11 +93,14 @@ function App() {
         setInputValue={setInputValue}
         inputValue={inputValue}
       />
-      <Grid data={data} foundChar={foundChar} inputValue={inputValue} />
+      <Grid
+        data={searchResults.length > 0 ? searchResults : data}
+        inputValue={inputValue}
+        noCharResults={noCharResults}
+      />
       <button className={styles.btn} onClick={() => handleClick()}>
         Load more
       </button>
-      <ScrollToTop />
     </div>
   );
 }

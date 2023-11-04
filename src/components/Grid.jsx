@@ -3,36 +3,25 @@ import React, { useState } from "react";
 import styles from "./Grid.module.css";
 import CharacterCard from "./CharacterCard";
 
-export default function Grid({ data, foundChar, inputValue }) {
-  if (foundChar.length === 0) {
+export default function Grid({ data }) {
+  console.log({ data });
+  if (data.length > 0) {
     return (
       <div className={styles.container}>
         <h2 className={styles.listTitle}>List of characters</h2>
         <ul>
-          {data &&
-            data.map((characterData) => (
-              <CharacterCard
-                key={characterData.id}
-                characterData={characterData}
-              />
-            ))}
+          {data.map((character) => (
+            <CharacterCard key={character.id} character={character} />
+          ))}
         </ul>
       </div>
     );
   }
 
-  if (foundChar.length !== 0) {
+  if (data.length === 0) {
     return (
       <div className={styles.container}>
-        <h2 className={styles.listTitle}>
-          Characters found with the name {inputValue}
-        </h2>
-        <ul>
-          {foundChar &&
-            foundChar.map((foundChar) => (
-              <CharacterCard key={foundChar.id} foundChar={foundChar} />
-            ))}
-        </ul>
+        <h2 className={styles.listTitle}>No results</h2>
       </div>
     );
   }

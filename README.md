@@ -39,7 +39,7 @@ Featuring a responsive and user-friendly UI, the app allows users to:
 
 ## Demo
 
-[Rick-and-Morty-demo-url]
+**[Rick-and-Morty-demo-url]**
 
 ## Built with
 

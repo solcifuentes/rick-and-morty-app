@@ -61,6 +61,14 @@ Follow these few instructions to get the app working:
     npm run dev
    ```
 
+<!-- DEMO -->
+
+## Demo
+
+https://sol-rick-and-morty.netlify.app/
+
+<!-- CONTACT -->
+
 ## Contact
 
 Sol Cifuentes Corral <br/>

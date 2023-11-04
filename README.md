@@ -56,11 +56,7 @@ Follow these few instructions to get the app working:
    ```sh
    npm install
    ```
-3. Install react-icons package
-   ```js
-    npm install react-icons --save
-   ```
-4. Run the app
+3. Run the app
    ```js
     npm run dev
    ```
